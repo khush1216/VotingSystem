@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>VOTING SYSTEM</title>
+</head>
+<body>
+<p>What is the best video game of all time?</p>
+<form action="#" th:action="@{/show_results}" method="post">
+  <input type="radio" name="game" value="overwatch">Overwatch<br>
+  <input type="radio" name="game" value="world_of_warcraft">World of War Craft <br>
+  <input type="radio" name="game" value="pubj"> PUBJ<br>
+  <input type="radio" name="game" value="league_of_legends"> League of Legends<br>
+  <input type="submit" value = "Submit">
+</form>
+
+</body>
+</html>

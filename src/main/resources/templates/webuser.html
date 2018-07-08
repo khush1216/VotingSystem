@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+</head>
+<body>
+<p>Enter username to vote:</p>
+<form action="#" th:action="@{/proceed_to_vote}" method="post">
+  <input type="text" name="username" /><br><br>
+  <input type="submit" value="Submit" /><br>
+  </form>
+</body>
+</html>

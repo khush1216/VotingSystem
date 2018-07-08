@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>VOTING RESULTS</title>
+</head>
+<body>
+<p>VOTING RESULTS!!!!</p>
+
+<div>
+<ul th:each="videogame : ${videogames}">
+	<li th:text="${videogame.name} + ' '+ ' votes received = '+ ${videogame.no_of_votes}"></li>
+</ul>
+</div>
+
+</body>
+</html>

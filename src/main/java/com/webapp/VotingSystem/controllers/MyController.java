@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import com.webapp.VotingSystem.entity.Person;
 import com.webapp.VotingSystem.repo.Repositories;
 
+//Controller class for Person- checks if person is logging in again within 24 hours, etc.
+
+
 @Controller
 public class MyController {
 	
@@ -27,17 +30,20 @@ public class MyController {
 	public String proceedToVote(@RequestBody String name) {
 		
 		Person person = repo.findByName(name);
-		
-		logger.info(name.toString());
-		
-		if(person != null && person.getInTime() - System.currentTimeMillis() < 86400000) {
-			//person.setInTime(System.currentTimeMillis());
+				
+		if(person != null && (System.currentTimeMillis() - person.getInTime() < 86400000)) {
+			long diff = person.getInTime() - System.currentTimeMillis();
+			logger.info(Long.toString(diff));
 			return "/cannotVote.html";
 		}
-		else if(person == null) {
+		else if(person == null && !name.equals("username=")) {
 			Person newPerson = new Person(name,System.currentTimeMillis());
 			repo.save(newPerson);
 			return "/frontend.html";
+		}
+		
+		else if(name.equals("username=")) {
+			return "InvalidName.html";
 		}
 		
 		//if person exists and 24 hours are up.

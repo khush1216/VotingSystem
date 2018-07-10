@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+//table for Person - id = name, log in time in milliseconds
+
 @Entity
 @Table(name="person")
 public class Person {

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.webapp.VotingSystem.entity.VideoGames;
 
+//Repository for video games table
 @Repository
 public interface VotingOptRepo extends JpaRepository<VideoGames,Long> {
 	

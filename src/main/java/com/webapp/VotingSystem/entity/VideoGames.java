@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.*;
 
+//Table for video games - id = video game name, 2nd column =  number of votes
 @Entity
 @Table(name="videogames")
 public class VideoGames {
